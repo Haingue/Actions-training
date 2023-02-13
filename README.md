@@ -65,3 +65,21 @@ For this workshop you need the following:
 - A free account for https://github.com
 - It is recommended to have a second screen for the hand-on labs
 
+
+## More informations
+https://docs.github.com/en/rest/overview/libraries
+https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/
+
+https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
+
+https://github.com/wulfland/AccelerateDevOps/edit/main/.github/workflows/job_summaries.yml
+SOLID design principles: https://en.wikipedia.org/wiki/SOLID
+Semantic versioning https://semver.org/
+
+Publish to the Marketplace: https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace 
+Actions templates: https://github.com/actions 
+github.com/actions/toolkit: https://github.com/actions/toolkit 
+TypeScript template from ActionsDesk: https://github.com/ActionsDesk/ps-typescript-template
+
+GitHub script: https://github.com/actions/github-script
+CLI pattern: https://github.com/ActionsDesk/admin-support-issueops-actions
