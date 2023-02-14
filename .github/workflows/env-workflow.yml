@@ -12,7 +12,7 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     concurrency:
-      group: ${{ github.ref }}
+      group: ${{ github.ref }}-build
       cancel-in-progress: true
     steps:
       - name: build
@@ -27,9 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
     environment: test
-    concurrency:
-      group: ${{ github.ref }}-test
-      cancel-in-progress: true
     steps:
       - name: test
         run: |
@@ -42,9 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
     environment: Load-Test
-    concurrency:
-      group: ${{ github.ref }}-load-test
-      cancel-in-progress: true
     steps:
       - name: load-test
         run: |
@@ -60,8 +54,6 @@ jobs:
     environment:
       name: prod
       url: https://writeabout.net
-    concurrency:
-      group: ${{ github.ref }}-prod
     steps:
       - name: deploy-prod
         run: |
