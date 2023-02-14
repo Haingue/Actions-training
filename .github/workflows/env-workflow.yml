@@ -28,7 +28,7 @@ jobs:
     needs: Build
     environment: test
     concurrency:
-      group: ${{ github.ref }}
+      group: ${{ github.ref }}-test
       cancel-in-progress: true
     steps:
       - name: test
@@ -43,7 +43,7 @@ jobs:
     needs: Build
     environment: Load-Test
     concurrency:
-      group: ${{ github.ref }}
+      group: ${{ github.ref }}-load-test
       cancel-in-progress: true
     steps:
       - name: load-test
@@ -61,7 +61,7 @@ jobs:
       name: prod
       url: https://writeabout.net
     concurrency:
-      group: ${{ github.ref }}
+      group: ${{ github.ref }}-prod
     steps:
       - name: deploy-prod
         run: |
