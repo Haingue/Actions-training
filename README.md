@@ -83,3 +83,8 @@ TypeScript template from ActionsDesk: https://github.com/ActionsDesk/ps-typescri
 
 GitHub script: https://github.com/actions/github-script
 CLI pattern: https://github.com/ActionsDesk/admin-support-issueops-actions
+
+GitHub Docs - Secrets: https://docs.github.com/en/actions/reference/encrypted-secrets
+Environment docs - https://docs.github.com/en/actions/reference/environments
+Workflow syntax - https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idenvironment
+GitHub Docs - Deployment API: https://developer.github.com/v3/repos/deployments/
