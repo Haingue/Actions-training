@@ -35,7 +35,7 @@ jobs:
       - name: load-test
         run: |
          echo 'Testing ...'
-         sleep 15000
+         sleep 15
 
   Production:
     if: github.event.inputs.environment == 'Production'
@@ -52,6 +52,6 @@ jobs:
          echo 'Step 3 deploying...'
          echo 'Step 4 deploying...'
          echo 'Step 5 deploying...'
-         sleep 10000
+         sleep 10
       
           
