@@ -34,6 +34,8 @@ jobs:
       - name: test
         run: |
          echo 'Testing ...'
+         echo 'Var: ${{ vars.UPLOAD_FILE_SIZE }}'
+         echo 'Secret: ${{ secrets.DB_URL }}'
 
   Load-Test:
     if: github.event_name == 'workflow_dispatch'
@@ -47,6 +49,8 @@ jobs:
       - name: load-test
         run: |
          echo 'Testing ...'
+         echo 'Var: ${{ vars.UPLOAD_FILE_SIZE }}'
+         echo 'Secret: ${{ secrets.DB_URL }}'
          sleep 15
 
   Production:
@@ -66,6 +70,8 @@ jobs:
          echo 'Step 3 deploying...'
          echo 'Step 4 deploying...'
          echo 'Step 5 deploying...'
+         echo 'Var: ${{ vars.UPLOAD_FILE_SIZE }}'
+         echo 'Secret: ${{ secrets.DB_URL }}'
          sleep 10
       
           
