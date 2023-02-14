@@ -1,4 +1,4 @@
-name: Delete Workflows
+name: Env Workflows
 
 on:
   workflow_dispatch:
