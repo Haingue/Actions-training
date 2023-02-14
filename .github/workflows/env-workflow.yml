@@ -1,0 +1,53 @@
+name: Delete Workflows
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+  Test:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    needs: Build
+    environment: test
+    steps:
+      - name: test
+        run: |
+         echo 'Testing ...'
+
+  Load-Test:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    needs: Build
+    environment: Load-Test
+    steps:
+      - name: load-test
+        run: |
+         echo 'Testing ...'
+         sleep 15000
+
+  Production:
+    if: github.event.inputs.environment == 'Production'
+    runs-on: ubuntu-latest
+    needs: [Test, Load-Test]
+    environment:
+      name: prod
+      url: https://writeabout.net
+    steps:
+      - name: deploy-prod
+        run: |
+         echo 'Step 1 deploying...'
+         echo 'Step 2 deploying...'
+         echo 'Step 3 deploying...'
+         echo 'Step 4 deploying...'
+         echo 'Step 5 deploying...'
+         sleep 10000
+      
+          
